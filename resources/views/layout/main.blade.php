@@ -389,26 +389,26 @@
                 color: rgba(203, 213, 224, var(--text-opacity))
             }
         }
-
     </style>
 
     <style>
         body {
             font-family: 'Nunito', sans-serif;
         }
-
     </style>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 
 <body class="dark:bg-gray-900">
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="/">Home</a>
-      </nav>
-      <br><br>
-      <div class="container">@yield('content')</div>
+    </nav>
+    <br><br>
+    <div class="container">@yield('content')</div>
+
+    <script src="{{ secure_asset('js/app.js') }}"></script>
 
 </body>
 

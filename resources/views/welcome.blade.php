@@ -82,7 +82,6 @@
             </form>
         </div>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.decimal').keyup(function() {
