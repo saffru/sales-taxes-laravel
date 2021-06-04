@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="hidden" name="products" value="{{ serialize($myArray) }}">
+                    <input type="hidden" name="products" value="{{ serialize($products) }}">
 
                     <input id="product-name" name="product-name" type="text" class="form-control"
                         placeholder="Product name">
@@ -60,7 +60,7 @@
                 @csrf
                 <div>
                     <ul class="list-group">
-                        @forelse ($myArray as $product)
+                        @forelse ($products as $product)
                             <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
                                     <div><strong>{{ $product['category'] }}</strong></div>
@@ -74,8 +74,9 @@
                         @endforelse
                     </ul>
                 </div>
-                <input type="hidden" name="test" value="{{ serialize($myArray) }}">
+                <input type="hidden" name="products" value="{{ serialize($products) }}">
                 <div>
+                    <br>
                 <button type="submit" class="btn btn-primary btn-block">Confirm</button>
                 </div>
             </form>
@@ -84,26 +85,6 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            /* $("#category-button option").click(function() {
-                var value = $(this).html();
-                switch (value) {
-                    case 'Book':
-                        value = 'Book title';
-                        break;
-                    case 'Food':
-                        value = 'Food name';
-                        break;
-                    case 'Medical prod':
-                        value = 'Drug name';
-                        break;
-                    default:
-                        'Product name'
-
-                }
-                var input = $('#product-name');
-                input.attr('placeholder', value);
-            }); */
-
             $('.decimal').keyup(function() {
                 var val = $(this).val();
                 if (isNaN(val)) {
@@ -134,4 +115,5 @@
             });
         });
 
-    </script>@stop
+    </script>
+@stop

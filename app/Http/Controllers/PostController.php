@@ -9,15 +9,15 @@ class PostController extends Controller
 {
     public function welcome()
     {
-        $myArray = [];
-        return view('welcome')->with('myArray', $myArray);
+        $products = [];
+        return view('welcome')->with('products', $products);
     }
 
     public function store(Request $request)
     {
-        print($request);
+        //print($request);
         //print_r($myArray);
-        $myArray = unserialize($request->products);
+        $products = unserialize($request->products);
         $validated = $request->validate([
             'category' => 'string',
             'product-name' => 'required|string',
@@ -25,22 +25,26 @@ class PostController extends Controller
             'imported' => ''
         ]);
 
-        $myArray[] = [
+        $products[] = [
             'category' => $request->input('category'),
             'name' => $request->input('product-name'),
             'price' => $request->input('price'),
             'imported' => $request->input('imported') ? true : false
         ];
 
-        print_r($myArray);
+        //print_r($products);
 
-        return view('welcome', compact('myArray'));
+        return view('welcome', compact('products'));
     }
 
     public function purchase(Request $request)
     {
+        $products = unserialize($request->products);
 
-        [$result, $tot_taxes, $products] = CommonController::calculate(unserialize($request->products));
+        print("this is a test");
+        print($request);
+
+        [$result, $tot_taxes, $products] = CommonController::calculate($products);
 
         return view('result')->with('result', $result)->with('tot_taxes', $tot_taxes)->with('products', $products);
     }

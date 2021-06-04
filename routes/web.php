@@ -24,6 +24,7 @@ Route::get('/', [PostController::class, 'welcome'])->name('welcome');
 Route::post('/post', [PostController::class, 'store'])->name('store');
 Route::post('/confirm', [PostController::class, 'purchase'])->name('purchase');
 
+//Tests
 Route::get('/test1', [Test1Controller::class, 'runTest']);
 Route::get('/test2', [Test2Controller::class, 'runTest']);
 Route::get('/test3', [Test3Controller::class, 'runTest']);
