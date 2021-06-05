@@ -42,4 +42,18 @@ Write an application that prints out the receipt details for these shopping bask
     Sales Taxes: 7.90 
     Total: 98.38
 
+## Run Application
+Go to https://obscure-ravine-01896.herokuapp.com
+
+### Homepage
+Is possible to add some products in your shopping cart using the UI.
+Confirm button will show you the prices of single items, total price and total sales taxes.
+
+## Run tests
+### Input 1
+Go to https://obscure-ravine-01896.herokuapp.com/test1
+### Input 2
+Go to https://obscure-ravine-01896.herokuapp.com/test2
+### Input 3
+Go to https://obscure-ravine-01896.herokuapp.com/test3
 
